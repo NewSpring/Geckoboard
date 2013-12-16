@@ -20,8 +20,8 @@ get '/:form' do
                              :filters => [['DateCreated','Is_after',"#{current.prev_month.prev_month.end_of_month.strftime("%Y-%m-%d 23:59:59")}"],
                                           ['DateCreated','Is_before',"#{current.beginning_of_month.strftime("%Y-%m-%d 00:00:01")}"],
                                           ['CompleteSubmission','Is_equal_to',1]])
-  rescue WuParty::HTTPError => e
-    [403, {'Content-Type' => 'application/json'}, e.message]
+  rescue WuParty::HTTPError
+    halt 403, "API Rate Limit Reached!!"
   end
 
   json :item => [{:value => "#{year}", :text => "Total for #{current.strftime("%Y")}"},
