@@ -5,5 +5,5 @@ gem 'json'
 gem 'sinatra-contrib'
 gem 'activesupport'
 gem 'wuparty'
-
-# gem "rails"
+gem 'ooyala-v2-api'
+gem 'chronic_duration'
