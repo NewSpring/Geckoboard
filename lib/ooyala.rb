@@ -5,6 +5,8 @@ require "active_support/core_ext"
 
 module WIDGET
   class OoyalaAPI < Sinatra::Base
+    helpers Sinatra::JSON
+
     get '/asset/:embed_code' do
       ooyala = Ooyala::API.new(ENV['OOYALA_API_KEY'], ENV['OOYALA_SECRET_KEY'])
       current = Time.new

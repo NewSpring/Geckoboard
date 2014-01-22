@@ -5,6 +5,8 @@ require "active_support/core_ext"
 
 module WIDGET
   class Wufoo < Sinatra::Base
+    helpers Sinatra::JSON
+
     get '/:form' do
       wufoo = WuParty::Form.new(params[:form],:account => ENV['ACCOUNT'], :api_key => ENV['API_KEY'])
       current = Time.new
