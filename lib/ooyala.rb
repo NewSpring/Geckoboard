@@ -40,7 +40,7 @@ module WIDGET
       time_in_sec = video["results"][0]["metrics"]["video"]["time_watched"]*0.001
       readable_time = ChronicDuration.output(time_in_sec, :hour  => :true, :units => 2)
 
-      json :item => [{:value => "#{readable_time}", :text => "#{video["results"][0]["name"]}"}]
+      json :item => [{:text => "#{readable_time}", :type => 0}]
     end
   end
 end
