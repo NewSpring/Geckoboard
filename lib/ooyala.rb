@@ -38,7 +38,7 @@ module WIDGET
       video = ooyala.get('/v2/analytics/reports/account/performance/videos/'+params[:embed_code]+'/'+start_date+'...'+end_date+'/')
 
       time_in_sec = video["results"][0]["metrics"]["video"]["time_watched"]*0.001
-      readable_time = ChronicDuration.output(time_in_sec, :hour  => :true, :units => 2)
+      readable_time = ChronicDuration.output(time_in_sec, :format => :long)
 
       json :item => [{:text => "#{readable_time}", :type => 0}]
     end
