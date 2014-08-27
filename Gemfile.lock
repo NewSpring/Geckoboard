@@ -5,6 +5,7 @@ GEM
       i18n (= 0.6.1)
       multi_json (~> 1.0)
     backports (3.3.0)
+    chronic (0.10.2)
     chronic_duration (0.10.2)
       numerizer (~> 0.1.1)
     eventmachine (1.0.3)
@@ -55,8 +56,10 @@ PLATFORMS
 
 DEPENDENCIES
   activesupport
+  chronic
   chronic_duration
   json
   ooyala-v2-api
+  rest-client
   sinatra-contrib
   wuparty
