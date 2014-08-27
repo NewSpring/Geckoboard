@@ -113,7 +113,7 @@ module WIDGET
         count = count+1
       end
 
-      json :item => [current , output]
+      json :item => [current , output.reverse]
     end
   end
 end
