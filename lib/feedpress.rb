@@ -106,7 +106,7 @@ module WIDGET
       count = 1
       current = {:text => "Subscribers", :value => "#{data[0]['greader'] +  data[0]['newsletter']}"}
       data.each do |s|
-        output << "#{s['greader'] + s['other'] + s['direct'] + s['newsletter']}"
+        output << "#{s['greader'] + s['newsletter']}"
         if count >= limit then
           break
         end
