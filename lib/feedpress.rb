@@ -4,6 +4,7 @@ require "active_support/core_ext"
 require "chronic_duration"
 require "chronic"
 require "rest_client"
+require "json"
 
 module Feedpress
   class API
@@ -122,7 +123,7 @@ module WIDGET
       data = feed.get(params[:feed_name], endpoint)
       data = JSON.parse(data)
       data = data['stats']
-      json :item => [ "value" => "#{data[0]['greader']}", "value" => "#{data[7]['greader']}" ]
+      json item: [ { 'value' => "#{data[0]['greader']}" } , { 'value' => "#{data[7]['greader']}" } ]
     end
   end
 end
