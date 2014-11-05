@@ -104,7 +104,7 @@ module WIDGET
       data = data['stats']
       output = []
       count = 1
-      current = {:text => "Subscribers", :value => "#{data[0]['greader'] + data[0]['other'] + data[0]['direct'] + data[0]['newsletter']}"}
+      current = {:text => "Subscribers", :value => "#{data[0]['greader'] +  data[0]['newsletter']}"}
       data.each do |s|
         output << "#{s['greader'] + s['other'] + s['direct'] + s['newsletter']}"
         if count >= limit then
@@ -114,6 +114,15 @@ module WIDGET
       end
 
       json :item => [current , output.reverse]
+    end
+
+    get '/feeds/subscribers/new.json' do
+      endpoint = '/feeds/subscribers.json'
+
+      data = feed.get(params[:feed_name], endpoint)
+      data = JSON.parse(data)
+      data = data['stats']
+      json :item => [ :value => "#{data[0]['greader']}", :value => "#{data[7]['greader']}" ]
     end
   end
 end
