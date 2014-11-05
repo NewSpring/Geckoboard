@@ -116,7 +116,7 @@ module WIDGET
       json :item => [current , output.reverse]
     end
 
-    get '/feeds/subscribers/new.json' do
+    get '/subscribers/new/:feed_name' do
       endpoint = '/feeds/subscribers.json'
 
       data = feed.get(params[:feed_name], endpoint)
