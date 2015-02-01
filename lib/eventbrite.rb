@@ -42,7 +42,7 @@ module WIDGET
         end
       end
 
-      json :item => { :value => "#{quantity_sold}", :text => "Total Number of Students" }
+      json :item => [{ :value => "#{quantity_sold}", :text => "Total Number of Students" }]
     end
 
     get '/volunteers' do
@@ -59,7 +59,7 @@ module WIDGET
         quantity_sold = quantity_sold+t['ticket']['quantity_sold'].to_i
       end
 
-      json :item => { :value => "#{quantity_sold}", :text => "Total Number of Volunteers" }
+      json :item => [{ :value => "#{quantity_sold}", :text => "Total Number of Volunteers" }]
     end
   end
 end
