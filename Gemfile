@@ -3,6 +3,7 @@ source "https://rubygems.org"
 ruby "2.0.0"
 
 gem 'json', '= 1.7.7'
+gem 'multi_json'
 gem 'sinatra-contrib'
 gem 'rest-client'
 gem 'activesupport'
