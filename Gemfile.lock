@@ -1,3 +1,21 @@
+GIT
+  remote: https://github.com/envoy/eventbrite-client.rb.git
+  revision: a46378c8149d96f70eb5993e77ef7846507f707f
+  specs:
+    eventbrite-client (0.1.0)
+      eventbrite-client
+      httparty (~> 0.13.1)
+      tzinfo
+
+GIT
+  remote: https://github.com/seven1m/wuparty.git
+  revision: d78cde0daf298fa51366443dc6a4a0d4849d6e85
+  specs:
+    wuparty (1.2.6)
+      httparty (>= 0.6.1)
+      mime-types (~> 1.16)
+      multipart-post (>= 1.0.1)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -9,15 +27,15 @@ GEM
     chronic_duration (0.10.2)
       numerizer (~> 0.1.1)
     eventmachine (1.0.3)
-    httparty (0.10.2)
-      multi_json (~> 1.0)
+    httparty (0.13.3)
+      json (~> 1.8)
       multi_xml (>= 0.5.2)
     i18n (0.6.1)
-    json (1.7.7)
+    json (1.8.2)
     mime-types (1.22)
     multi_json (1.7.2)
-    multi_xml (0.5.3)
-    multipart-post (1.2.0)
+    multi_xml (0.5.5)
+    multipart-post (2.0.0)
     numerizer (0.1.1)
     ooyala-v2-api (0.0.3)
       json
@@ -46,10 +64,7 @@ GEM
       sinatra (~> 1.4.2)
       tilt (~> 1.3)
     tilt (1.3.7)
-    wuparty (1.2.4)
-      httparty (>= 0.6.1)
-      mime-types (>= 1.16)
-      multipart-post (>= 1.0.1)
+    tzinfo (0.3.43)
 
 PLATFORMS
   ruby
@@ -58,8 +73,10 @@ DEPENDENCIES
   activesupport
   chronic
   chronic_duration
-  json
+  eventbrite-client!
+  json (>= 1.8)
   ooyala-v2-api
   rest-client
   sinatra-contrib
-  wuparty
+  tzinfo (~> 0.3.22)
+  wuparty!
