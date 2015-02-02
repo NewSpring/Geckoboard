@@ -5,6 +5,7 @@ ruby "2.0.0"
 gem 'json', '~> 1.8'
 gem 'multi_json'
 gem 'sinatra-contrib'
+gem 'dotenv'
 gem 'rest-client'
 gem 'activesupport'
 gem 'wuparty'
